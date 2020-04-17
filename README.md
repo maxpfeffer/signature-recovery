@@ -12,7 +12,11 @@ In order to recover the matrix, run
 
 The two outputs 'X' and 'cost' are the last reached point on the manifold and its cost. If m <= d, the algorithm will recover the path. Because this does not work every time, it will try 5 times by default until the cost function is small enough. If m > d, the algorithm will look for the shortest path out of the 5 tries. 
 
-The method uses a trust-region solver from the manopt toolbox (cite as below) with a preliminary run of a BFGS-solver. If the number of linear pieces m is lower than or equal to the dimension d, the path will be recovered uniquely. The algorithm will be performed several times with different starting points to avoid local minima. If there are more pieces than the dimension, the algorithm will attempt to obtain the shortest such path. The initial iterate is X0 if it is provided. Otherwise, a random point is picked. To specify options whilst not specifying an initial iterate, give X0 as [] (the empty matrix).
+The method uses a trust-region solver from the manopt toolbox (cite as below) with a preliminary run of a BFGS-solver. To install the manopt toolbox, go to
+
+https://www.manopt.org/
+
+The initial iterate is X0 if it is provided. Otherwise, a random point is picked. To specify options whilst not specifying an initial iterate, give X0 as [] (the empty matrix).
 
 You can alter a lot of options. The options structure is used to overwrite the default values. All options have a default value and are hence optional. To force an option value, pass an options structure with a field options.optionname, where optionname is one of the following and the default value is indicated between parentheses:
 
