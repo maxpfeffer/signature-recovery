@@ -1,6 +1,6 @@
 # signature-recovery
 
-This method is made to recover linear paths from their third order signature. If you have a signature S and you want to recover the linear transformation of the axis path, you only have to enter the number of pieces m. You can generate a random S by
+This MATLAB-method is made to recover linear paths from their third order signature (see the article below). If you have a signature S and you want to recover the linear transformation of the axis path, you only have to enter the number of pieces m. You can generate a random S by
 
 Z = randn(d,m); <br>
 C = piecewise_lin_sign(m); <br>
