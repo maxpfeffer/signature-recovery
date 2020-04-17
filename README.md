@@ -16,64 +16,65 @@ The method uses a trust-region solver from the manopt toolbox (cite as below) wi
 
 You can alter a lot of options. The options structure is used to overwrite the default values. All options have a default value and are hence optional. To force an option value, pass an options structure with a field options.optionname, where optionname is one of the following and the default value is indicated between parentheses:
 
-   tries (5)
+{{plainlist
+   * tries (5) <br>
        Number of tries with different starting points.
-   bfgs (true)
+   * bfgs (true) <br>
        Set to false if no preliminary BFGS is required.
-   display (true)
+   * display (true) <br>
        Set to false to disable all outputs.
-   decreases (20)
+   * decreases (20) <br>
        If the shortest path is to be calculated, this is the number of
        times lambda will be decreased.
-   startlambda (0.001)
+   * startlambda (0.001) <br>
        If the shortest path is to be calculated, the is the initial value 
        of lambda.
-   plot (false)
+   * plot (false) <br>
        Set to true if the path should be plotted after recovery (only
        possible if d = 2,3).
 
-   FURTHER options OF THE MANOPT TOOLBOX (THAT CAN REASONABLY BE ALTERED):
+   Further options of the manopt toolbox (that can reasonably be altered):
 
-   tolgradnorm (1e-10)
+   * tolgradnorm (1e-10) <br>
        The algorithm terminates if the norm of the gradient drops below
        this.
-   tolcost (1e-20)
+   * tolcost (1e-20) <br>
        The algorithm terminates if the value of the cost function drops
        below this. For exact recovery, it is desired that this is very
        small.
-   maxiter (1000)
+   * maxiter (1000) <br>
        The algorithm terminates if maxiter (outer) iterations were 
        executed. 
-   minstepsize (1e-20)
+   * minstepsize (1e-20) <br>
        The algorithm terminates if the stepsize is smaller than this
        value. It is desired that even very small steps are possible.
 	 maxinner (10*problem.M.dim() : the manifold's dimension)
        Maximum number of inner iterations (for tCG).
-   Delta_bar (0.1*sqrt(problem.M.dim()))
+   * Delta_bar (0.1*sqrt(problem.M.dim())) <br>
        Maximum trust-region radius. If you specify this parameter but not
        Delta0, then Delta0 will be set to 1/8 times this parameter.
-   Delta0 (Delta_bar/8)
+   * Delta0 (Delta_bar/8) <br>
        Initial trust-region radius. If you observe a long plateau at the
        beginning of the convergence plot (gradient norm VS iteration), it
        may pay off to try to tune this parameter to shorten the plateau.
        You should not set this parameter without setting Delta_bar too (at
        a larger value).
-   verbosity (0)
+   * verbosity (0) <br>
        Integer number used to tune the amount of output the algorithm
        generates during execution (mostly as text in the command window).
        The higher, the more output. 0 means silent. 3 and above includes a
        display of the options structure at the beginning of the execution.
 
- Please cite the Manopt paper:
-       @article{manopt,
-         author  = {Boumal, N. and Mishra, B. and Absil, P.-A. and Sepulchre, R.},
-         title   = {{M}anopt, a {M}atlab Toolbox for Optimization on Manifolds},
-         journal = {Journal of Machine Learning Research},
-         year    = {2014},
-         volume  = {15},
-         pages   = {1455--1459},
-         url     = {http://www.manopt.org},
-       }
+ Please cite the Manopt paper: <br>
+       @article{manopt, <br>
+         author  = {Boumal, N. and Mishra, B. and Absil, P.-A. and Sepulchre, R.}, <br>
+         title   = {{M}anopt, a {M}atlab Toolbox for Optimization on Manifolds}, <br>
+         journal = {Journal of Machine Learning Research}, <br>
+         year    = {2014}, <br>
+         volume  = {15}, <br>
+         pages   = {1455--1459}, <br>
+         url     = {http://www.manopt.org}, <br>
+       } <br>
  Please also cite the research paper: <br>
        @article{PfefferSeigalSturmfels2019, <br>
          author  = {Max Pfeffer and Anna Seigal and Bernd Sturmfels}, <br>
