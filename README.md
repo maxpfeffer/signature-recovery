@@ -16,7 +16,6 @@ The method uses a trust-region solver from the manopt toolbox (cite as below) wi
 
 You can alter a lot of options. The options structure is used to overwrite the default values. All options have a default value and are hence optional. To force an option value, pass an options structure with a field options.optionname, where optionname is one of the following and the default value is indicated between parentheses:
 
-{{plainlist
    * tries (5) <br>
        Number of tries with different starting points.
    * bfgs (true) <br>
