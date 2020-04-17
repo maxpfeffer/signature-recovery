@@ -2,9 +2,9 @@
 
 This method is made to recover linear paths from their third order signature. If you have a signature S and you want to recover the linear transformation of the axis path, you only have to enter the number of pieces m. You can generate a random S by
 
-Z = randn(d,m);
-C = piecewise_lin_sign(m);
-S = trip_prod(Z,C);
+Z = randn(d,m); <br>
+C = piecewise_lin_sign(m); <br>
+S = trip_prod(Z,C); <br>
 
 In order to recover the matrix, run
 
@@ -74,15 +74,15 @@ You can alter a lot of options. The options structure is used to overwrite the d
          pages   = {1455--1459},
          url     = {http://www.manopt.org},
        }
- Please also cite the research paper:
-       @article{PfefferSeigalSturmfels2019,
-         author  = {Max Pfeffer and Anna Seigal and Bernd Sturmfels},
-         title   = {{Learning paths from signature tensors}},
-         doi     = {10.1137/18M1212331},
-         journal = {SIAM journal on matrix analysis and applications},
-         pages   = {394--416},
-         year    = {2019},
-         volume  = {40},
-         number  = {2},
-         issn    = {0895-4798},
+ Please also cite the research paper: <br>
+       @article{PfefferSeigalSturmfels2019, <br>
+         author  = {Max Pfeffer and Anna Seigal and Bernd Sturmfels}, <br>
+         title   = {{Learning paths from signature tensors}}, <br>
+         doi     = {10.1137/18M1212331}, <br>
+         journal = {SIAM journal on matrix analysis and applications}, <br>
+         pages   = {394--416}, <br>
+         year    = {2019}, <br>
+         volume  = {40}, <br>
+         number  = {2}, <br>
+         issn    = {0895-4798}, <br>
        }
