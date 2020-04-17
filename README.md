@@ -10,7 +10,7 @@ In order to recover the matrix, run
 
 [X,cost] = recover_linear_transformation(S,m)
 
-The two outputs 'x' and 'cost' are the last reached point on the manifold and its cost. If m <= d, the algorithm will recover the path. Because this does not work every time, it will try 5 times by default until the cost function is small enough. If m > d, the algorithm will look for the shortest path out of the 5 tries. 
+The two outputs 'X' and 'cost' are the last reached point on the manifold and its cost. If m <= d, the algorithm will recover the path. Because this does not work every time, it will try 5 times by default until the cost function is small enough. If m > d, the algorithm will look for the shortest path out of the 5 tries. 
 
 The method uses a trust-region solver from the manopt toolbox (cite as below) with a preliminary run of a BFGS-solver. If the number of linear pieces m is lower than or equal to the dimension d, the path will be recovered uniquely. The algorithm will be performed several times with different starting points to avoid local minima. If there are more pieces than the dimension, the algorithm will attempt to obtain the shortest such path. The initial iterate is X0 if it is provided. Otherwise, a random point is picked. To specify options whilst not specifying an initial iterate, give X0 as [] (the empty matrix).
 
@@ -47,7 +47,7 @@ You can alter a lot of options. The options structure is used to overwrite the d
    * minstepsize (1e-20) <br>
        The algorithm terminates if the stepsize is smaller than this
        value. It is desired that even very small steps are possible.
-	 maxinner (10*problem.M.dim() : the manifold's dimension)
+   * maxinner (10*problem.M.dim() : the manifold's dimension) <br>
        Maximum number of inner iterations (for tCG).
    * Delta_bar (0.1*sqrt(problem.M.dim())) <br>
        Maximum trust-region radius. If you specify this parameter but not
@@ -66,26 +66,26 @@ You can alter a lot of options. The options structure is used to overwrite the d
 
  Please cite the Manopt paper:
 
-       @article{manopt, <br>
-         author  = {Boumal, N. and Mishra, B. and Absil, P.-A. and Sepulchre, R.}, <br>
-         title   = {{M}anopt, a {M}atlab Toolbox for Optimization on Manifolds}, <br>
-         journal = {Journal of Machine Learning Research}, <br>
-         year    = {2014}, <br>
-         volume  = {15}, <br>
-         pages   = {1455--1459}, <br>
-         url     = {http://www.manopt.org}, <br>
+       @article{manopt,
+         author  = {Boumal, N. and Mishra, B. and Absil, P.-A. and Sepulchre, R.},
+         title   = {{M}anopt, a {M}atlab Toolbox for Optimization on Manifolds},
+         journal = {Journal of Machine Learning Research},
+         year    = {2014},
+         volume  = {15},
+         pages   = {1455--1459},
+         url     = {http://www.manopt.org},
        } 
 
  Please also cite the research paper: 
 
-       @article{PfefferSeigalSturmfels2019, <br>
-         author  = {Max Pfeffer and Anna Seigal and Bernd Sturmfels}, <br>
-         title   = {{Learning paths from signature tensors}}, <br>
-         doi     = {10.1137/18M1212331}, <br>
-         journal = {SIAM journal on matrix analysis and applications}, <br>
-         pages   = {394--416}, <br>
-         year    = {2019}, <br>
-         volume  = {40}, <br>
-         number  = {2}, <br>
-         issn    = {0895-4798}, <br>
+       @article{PfefferSeigalSturmfels2019,
+         author  = {Max Pfeffer and Anna Seigal and Bernd Sturmfels},
+         title   = {{Learning paths from signature tensors}},
+         doi     = {10.1137/18M1212331},
+         journal = {SIAM journal on matrix analysis and applications},
+         pages   = {394--416},
+         year    = {2019},
+         volume  = {40},
+         number  = {2},
+         issn    = {0895-4798},
        }
