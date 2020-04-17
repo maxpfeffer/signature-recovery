@@ -64,7 +64,8 @@ You can alter a lot of options. The options structure is used to overwrite the d
        The higher, the more output. 0 means silent. 3 and above includes a
        display of the options structure at the beginning of the execution.
 
- Please cite the Manopt paper: <br>
+ Please cite the Manopt paper:
+
        @article{manopt, <br>
          author  = {Boumal, N. and Mishra, B. and Absil, P.-A. and Sepulchre, R.}, <br>
          title   = {{M}anopt, a {M}atlab Toolbox for Optimization on Manifolds}, <br>
@@ -73,8 +74,10 @@ You can alter a lot of options. The options structure is used to overwrite the d
          volume  = {15}, <br>
          pages   = {1455--1459}, <br>
          url     = {http://www.manopt.org}, <br>
-       } <br>
- Please also cite the research paper: <br>
+       } 
+
+ Please also cite the research paper: 
+
        @article{PfefferSeigalSturmfels2019, <br>
          author  = {Max Pfeffer and Anna Seigal and Bernd Sturmfels}, <br>
          title   = {{Learning paths from signature tensors}}, <br>
